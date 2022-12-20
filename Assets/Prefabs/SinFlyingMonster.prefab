@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34512dd774c9ac43a8760d431cfecce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
   moveSpeed: 3
   spriteRenderer: {fileID: 7355065713271074337}
   sprites:
@@ -134,3 +133,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bc0c232bf71c0f46adc83e56bc8f1ab, type: 3}
   - {fileID: 21300000, guid: fddd3973f88c81e43ae0c2e14a5bb3ae, type: 3}
   spriteChangeSpeed: 0.05
+  hitpoints: 1
+  sinMod: 2.5

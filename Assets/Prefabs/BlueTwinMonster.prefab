@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7355065713271074336}
   - component: {fileID: 7355065713271074337}
   - component: {fileID: 7355065713271074367}
-  - component: {fileID: 2574681051236940199}
+  - component: {fileID: 152439540}
   m_Layer: 0
   m_Name: BlueTwinMonster
   m_TagString: Monster
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.56, y: 0.87}
   m_EdgeRadius: 0
---- !u!114 &2574681051236940199
+--- !u!114 &152439540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,16 +121,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7355065713271074364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db9776a8b213984cb10fdeefd7d4065, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b73c4208b82bff49b078f1fcbdd391c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
   moveSpeed: 3
   spriteRenderer: {fileID: 7355065713271074337}
-  sprites:
-  - {fileID: 21300000, guid: 3809f51f1ea65d2459e67a502473cd78, type: 3}
-  - {fileID: 21300000, guid: 1c66e446c42da1d439cb9c5cc3956b00, type: 3}
-  - {fileID: 21300000, guid: fbffdae061ba3ed4b961bc96f3931d69, type: 3}
-  - {fileID: 21300000, guid: 19262b45d105b6d44aba5719a9754762, type: 3}
-  - {fileID: 21300000, guid: 7ed250cd93abcbc41b5e8a5feddd87b5, type: 3}
-  spriteChangeSpeed: 0.05
+  sprites: []
+  spriteChangeSpeed: 0.25
+  hitpoints: 1
+  twinPrefab: {fileID: 7355065713271074364}
