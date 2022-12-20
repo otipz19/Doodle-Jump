@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - Monster
+  - PlayerBullet
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - PlayerBullet
+  - Player
+  - Platforms
+  - Monsters
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2774491557
+    locked: 0
+  - name: Platforms
+    uniqueID: 645521337
+    locked: 0
+  - name: Monsters
+    uniqueID: 3780660347
+    locked: 0
+  - name: PlayerBullet
+    uniqueID: 1203934211
+    locked: 0
+  - name: Player
+    uniqueID: 2639666197
+    locked: 0
