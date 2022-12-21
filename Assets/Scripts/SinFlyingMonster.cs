@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SinFlyingMonster : Monster
+public class SinFlyingMonster : Monster, IMoveable
 {
     [SerializeField]
     private float sinMod = 2.5f;
@@ -15,14 +15,15 @@ public class SinFlyingMonster : Monster
 
     private void Start()
     {
+        mover = new Mover(this, moveSpeed);
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
         transform.position = new Vector2(-moveRange, transform.position.y);
         ChangeTargetPos(true);
-        StartMove();
-        StartCoroutine(ChangeSprite());
+        mover.StartMove();
+        StartCoroutine(ChangeSpritesContinuously());
     }
 
-    protected override void ChangeTargetPos(bool firstCall = false)
+    public void ChangeTargetPos(bool firstCall = false)
     {
         if (firstCall)
         {
@@ -36,6 +37,6 @@ public class SinFlyingMonster : Monster
             curDirection = rightDirection;
         else if (curPoint == pointsInPath)
             curDirection = leftDirection;
-        moveTargetPos = path[curPoint = curDirection(curPoint)];
+        mover.MoveTargetPos = path[curPoint = curDirection(curPoint)];
     }
 }

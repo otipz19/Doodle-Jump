@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueTwinMonster : Monster
+public class BlueTwinMonster : Monster, IMoveable
 {
     [SerializeField]
     private GameObject twinPrefab;
@@ -13,6 +13,7 @@ public class BlueTwinMonster : Monster
 
     private void Start()
     {
+        mover = new Mover(this, moveSpeed);
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
         if(twin == null)
         {
@@ -24,10 +25,10 @@ public class BlueTwinMonster : Monster
         edgeX = transform.position.x;
         centralX = edgeX < 0 ? -transform.localScale.x / 2 : transform.localScale.x / 2;
         ChangeTargetPos(true);
-        StartMove();
+        mover.StartMove();
     }
 
-    protected override void ChangeTargetPos(bool firstCall = false)
+    public void ChangeTargetPos(bool firstCall = false)
     {
         float targetX = 0;
         if (firstCall || twin != null && Mathf.Approximately(transform.position.x, edgeX))
@@ -46,7 +47,7 @@ public class BlueTwinMonster : Monster
         {
             targetX = edgeX;
         }
-        moveTargetPos = new Vector2(targetX, transform.position.y);
+        mover.MoveTargetPos = new Vector2(targetX, transform.position.y);
         spriteRenderer.flipX = targetX < transform.position.x;
     }
 }

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    private void Update()
+    protected virtual void Update()
+    {
+        DestroyOnOutOfCamera();
+    }
+
+    private void DestroyOnOutOfCamera()
     {
         if (transform.position.y < Camera.main.transform.position.y - Camera.main.orthographicSize - 0.25f)
         {

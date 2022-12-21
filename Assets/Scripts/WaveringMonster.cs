@@ -2,24 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveringMonster : Monster
+public class WaveringMonster : Monster, IMoveable
 {
     private Vector2 spawnPos;
 
     private void Start()
     {
+        mover = new Mover(this, moveSpeed);
+        moveRange = 1f;
         spawnPos = transform.position;
         ChangeTargetPos();
-        StartMove();
+        mover.StartMove();
     }
 
-    protected override void ChangeTargetPos(bool firstCall = false)
+    public void ChangeTargetPos(bool firstCall = false)
     {
-        moveTargetPos = spawnPos + (Vector2)Random.onUnitSphere * moveRange;
+        mover.MoveTargetPos = spawnPos + (Vector2)Random.onUnitSphere * moveRange;
         float border;
-        if (moveTargetPos.x < (border = -Camera.main.orthographicSize * Camera.main.aspect + transform.localScale.x))
-            moveTargetPos = new Vector2(border + moveRange / 4, moveTargetPos.y);
-        else if (moveTargetPos.x > (border = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.y))
-            moveTargetPos = new Vector2(border - moveRange / 4, moveTargetPos.y);
+        if (mover.MoveTargetPos.x < (border = -Camera.main.orthographicSize * Camera.main.aspect + transform.localScale.x))
+            mover.MoveTargetPos = new Vector2(border + moveRange / 4, mover.MoveTargetPos.y);
+        else if (mover.MoveTargetPos.x > (border = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.y))
+            mover.MoveTargetPos = new Vector2(border - moveRange / 4, mover.MoveTargetPos.y);
     }
 }
