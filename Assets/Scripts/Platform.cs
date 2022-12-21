@@ -12,12 +12,4 @@ public class Platform : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && collision.relativeVelocity.y <= 0)
-        {
-            Player.S.Rigidbody.velocity = Vector2.up * Player.S.VerticalSpeed;
-        }
-    }
 }

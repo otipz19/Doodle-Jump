@@ -44,8 +44,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float horizontalSpeed = 10f;
-
-    public float VerticalSpeed => verticalSpeed;
     [SerializeField]
     private float verticalSpeed = 5f;
 
@@ -59,6 +57,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float bulletShotDelay = 0.5f;
     private float lastShot;
+
+    public bool IsShieldActive { get; set; }
+    [SerializeField]
+    private Shield shield;
+
+    public bool IsSpringBootsActive { get; set; }
+    [SerializeField]
+    private SpringBoots springBoots;
 
     private void Awake()
     {
@@ -111,6 +117,7 @@ public class Player : MonoBehaviour
     {
         Rigidbody.velocity = crossplatformController.HorizontalVelocity;
         spriteRenderer.flipX = Rigidbody.velocity.x < 0;
+        springBoots.FlipX = !spriteRenderer.flipX;
     }
 
     private void CameraFollow()
@@ -132,5 +139,28 @@ public class Player : MonoBehaviour
     {
         nose.SetActive(false);
         spriteRenderer.sprite = rightDirectionSprite;
+    }
+
+    public void GetDamage()
+    {
+        if (!IsShieldActive)
+            Destroy(this.gameObject);
+    }
+
+    public void ActivateShield()
+    {
+        shield.Activate();
+    }
+
+    public void ActivateSpringBoots()
+    {
+        springBoots.Activate();
+    }
+
+    public void Jump(float platformSpeedModifier)
+    {
+        Rigidbody.velocity = Vector2.up * verticalSpeed * platformSpeedModifier * (IsSpringBootsActive ? springBoots.JumpMod : 1);
+        StopCoroutine(springBoots.Animate());
+        StartCoroutine(springBoots.Animate());
     }
 }

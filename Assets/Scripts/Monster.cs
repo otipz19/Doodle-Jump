@@ -24,7 +24,7 @@ public abstract class Monster : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Player":
-                Destroy(other.gameObject);
+                Player.S.GetDamage();
                 break;
             case "PlayerBullet":
                 if (--hitpoints <= 0)

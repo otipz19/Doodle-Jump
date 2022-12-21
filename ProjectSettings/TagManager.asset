@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Monster
   - PlayerBullet
+  - Bonus
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Player
   - Platforms
   - Monsters
-  - 
+  - Bonus
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 645521337
+    locked: 0
+  - name: Bonuses
+    uniqueID: 3792358741
     locked: 0
   - name: Monsters
     uniqueID: 3780660347

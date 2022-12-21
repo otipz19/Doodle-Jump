@@ -13,7 +13,7 @@ public class VolatilePlatform : Platform
         collider = GetComponent<Collider2D>();
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.relativeVelocity.y <= 0)
         {
