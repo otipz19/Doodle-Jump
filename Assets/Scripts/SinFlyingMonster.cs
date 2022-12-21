@@ -17,7 +17,7 @@ public class SinFlyingMonster : Monster, IMoveable
     {
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
         transform.position = new Vector2(-moveRange, transform.position.y);
-        StartCoroutine(ChangeSpritesContinuously());
+        StartCoroutine(spriteChanger.LoopAnimation());
     }
 
     public void ChangeTargetPos(bool firstCall = false)

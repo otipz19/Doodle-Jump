@@ -11,6 +11,8 @@ public class BlueTwinMonster : Monster, IMoveable
     private float edgeX;
     private float centralX;
 
+    private SpriteRenderer spriteRenderer;
+
     protected override void Initialize()
     {
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
@@ -23,6 +25,7 @@ public class BlueTwinMonster : Monster, IMoveable
         }
         edgeX = transform.position.x;
         centralX = edgeX < 0 ? -transform.localScale.x / 2 : transform.localScale.x / 2;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void ChangeTargetPos(bool firstCall = false)

@@ -7,7 +7,7 @@ public class HorizontalFlyingMonster : Monster, IMoveable
     protected override void Initialize()
     {
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
-        StartCoroutine(ChangeSpritesContinuously());
+        StartCoroutine(spriteChanger.LoopAnimation());
     }
 
     public void ChangeTargetPos(bool firstCall = false)

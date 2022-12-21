@@ -6,11 +6,6 @@ public class Platform : MonoBehaviour
 {
     protected virtual void Update()
     {
-        DestroyOnOutOfCamera();
-    }
-
-    private void DestroyOnOutOfCamera()
-    {
         if (transform.position.y < Camera.main.transform.position.y - Camera.main.orthographicSize - 0.25f)
         {
             PlatformGenerator.S.PlatformDestroyed();
@@ -18,7 +13,7 @@ public class Platform : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.relativeVelocity.y <= 0)
         {

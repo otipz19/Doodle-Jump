@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7355065713271074367}
   - component: {fileID: 2574681051236940199}
   - component: {fileID: -97462859960388198}
+  - component: {fileID: 335452978648104183}
   m_Layer: 0
   m_Name: HorizontalFlyingMonster
   m_TagString: Monster
@@ -125,14 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db9776a8b213984cb10fdeefd7d4065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7355065713271074337}
-  sprites:
-  - {fileID: 21300000, guid: 3809f51f1ea65d2459e67a502473cd78, type: 3}
-  - {fileID: 21300000, guid: 1c66e446c42da1d439cb9c5cc3956b00, type: 3}
-  - {fileID: 21300000, guid: fbffdae061ba3ed4b961bc96f3931d69, type: 3}
-  - {fileID: 21300000, guid: 19262b45d105b6d44aba5719a9754762, type: 3}
-  - {fileID: 21300000, guid: 7ed250cd93abcbc41b5e8a5feddd87b5, type: 3}
-  spriteChangeSpeed: 0.05
   hitpoints: 1
 --- !u!114 &-97462859960388198
 MonoBehaviour:
@@ -147,3 +140,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+--- !u!114 &335452978648104183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355065713271074364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5967913973ed61e43b4627507158ae59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7355065713271074337}
+  sprites:
+  - {fileID: 21300000, guid: 3809f51f1ea65d2459e67a502473cd78, type: 3}
+  - {fileID: 21300000, guid: 1c66e446c42da1d439cb9c5cc3956b00, type: 3}
+  - {fileID: 21300000, guid: fbffdae061ba3ed4b961bc96f3931d69, type: 3}
+  - {fileID: 21300000, guid: 19262b45d105b6d44aba5719a9754762, type: 3}
+  - {fileID: 21300000, guid: 7ed250cd93abcbc41b5e8a5feddd87b5, type: 3}
+  spriteChangeSpeed: 0.25
