@@ -5,8 +5,6 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour
 {
     protected Mover mover;
-    [SerializeField]
-    protected float moveSpeed = 3f;
     protected float moveRange;
 
     [SerializeField]
@@ -19,10 +17,13 @@ public abstract class Monster : MonoBehaviour
     [SerializeField]
     private int hitpoints = 1;
 
-    private void Update()
+    private void Start()
     {
-        mover.Move();
+        mover = GetComponent<Mover>();
+        Initialize();
     }
+
+    protected abstract void Initialize();
 
     protected IEnumerator ChangeSpritesContinuously()
     {

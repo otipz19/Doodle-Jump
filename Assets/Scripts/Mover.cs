@@ -7,36 +7,39 @@ public interface IMoveable
     void ChangeTargetPos(bool firstCall = false);
 }
 
-public class Mover 
+public class Mover : MonoBehaviour
 {
-    private MonoBehaviour moveable;
-    public Vector2 MoveTargetPos { get; set; }
+    private IMoveable moveable;
+    [SerializeField]
     private float moveSpeed;
     private Vector2 moveStartPos;
     private float moveStartTime;
     private float moveDuration;
 
-    public Mover(IMoveable moveable, float moveSpeed)
+    public Vector2 MoveTargetPos { get; set; }
+
+    private void Start()
     {
-        this.moveable = (MonoBehaviour)moveable;
-        this.moveSpeed = moveSpeed;
+        moveable = GetComponent<IMoveable>();
+        moveable.ChangeTargetPos(true);
+        StartMove();
+    }
+
+    private void Update()
+    {
+        float u = (Time.time - moveStartTime) / moveDuration;
+        transform.position = Vector2.Lerp(moveStartPos, MoveTargetPos, u);
+        if (u >= 1)
+        {
+            moveable.ChangeTargetPos();
+            StartMove();
+        }
     }
 
     public void StartMove()
     {
-        moveStartPos = moveable.transform.position;
-        moveDuration = Vector2.Distance(moveable.transform.position, MoveTargetPos) / moveSpeed;
+        moveStartPos = transform.position;
+        moveDuration = Vector2.Distance(transform.position, MoveTargetPos) / moveSpeed;
         moveStartTime = Time.time;
-    }
-
-    public void Move()
-    {
-        float u = (Time.time - moveStartTime) / moveDuration;
-        moveable.transform.position = Vector2.Lerp(moveStartPos, MoveTargetPos, u);
-        if (u >= 1)
-        {
-            ((IMoveable)moveable).ChangeTargetPos();
-            StartMove();
-        }
     }
 }

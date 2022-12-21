@@ -6,13 +6,10 @@ public class WaveringMonster : Monster, IMoveable
 {
     private Vector2 spawnPos;
 
-    private void Start()
+    protected override void Initialize()
     {
-        mover = new Mover(this, moveSpeed);
         moveRange = 1f;
         spawnPos = transform.position;
-        ChangeTargetPos();
-        mover.StartMove();
     }
 
     public void ChangeTargetPos(bool firstCall = false)

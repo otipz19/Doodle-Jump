@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7355065713271074337}
   - component: {fileID: 7355065713271074367}
   - component: {fileID: 2787423704333303371}
+  - component: {fileID: 2965068901583062175}
   m_Layer: 0
   m_Name: PurpleMonster
   m_TagString: Monster
@@ -124,3 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d15fcac8feadd140b7bd3e98fff90ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  sprites: []
+  spriteChangeSpeed: 0.25
+  hitpoints: 1
+--- !u!114 &2965068901583062175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355065713271074364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7322937228cc6514e8f3080ebd435d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3

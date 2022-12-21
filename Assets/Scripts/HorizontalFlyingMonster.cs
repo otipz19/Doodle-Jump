@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class HorizontalFlyingMonster : Monster, IMoveable
 {
-    private void Start()
+    protected override void Initialize()
     {
-        mover = new Mover(this, moveSpeed);
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
-        ChangeTargetPos(true);
-        mover.StartMove();
         StartCoroutine(ChangeSpritesContinuously());
     }
 

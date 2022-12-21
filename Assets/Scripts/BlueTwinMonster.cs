@@ -11,9 +11,8 @@ public class BlueTwinMonster : Monster, IMoveable
     private float edgeX;
     private float centralX;
 
-    private void Start()
+    protected override void Initialize()
     {
-        mover = new Mover(this, moveSpeed);
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
         if(twin == null)
         {
@@ -24,8 +23,6 @@ public class BlueTwinMonster : Monster, IMoveable
         }
         edgeX = transform.position.x;
         centralX = edgeX < 0 ? -transform.localScale.x / 2 : transform.localScale.x / 2;
-        ChangeTargetPos(true);
-        mover.StartMove();
     }
 
     public void ChangeTargetPos(bool firstCall = false)

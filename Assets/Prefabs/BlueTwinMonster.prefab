@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7355065713271074337}
   - component: {fileID: 7355065713271074367}
   - component: {fileID: 152439540}
+  - component: {fileID: 9094671157819066045}
   m_Layer: 0
   m_Name: BlueTwinMonster
   m_TagString: Monster
@@ -124,9 +125,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b73c4208b82bff49b078f1fcbdd391c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   spriteRenderer: {fileID: 7355065713271074337}
   sprites: []
   spriteChangeSpeed: 0.25
   hitpoints: 1
   twinPrefab: {fileID: 7355065713271074364}
+--- !u!114 &9094671157819066045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355065713271074364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7322937228cc6514e8f3080ebd435d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3

@@ -13,13 +13,10 @@ public class SinFlyingMonster : Monster, IMoveable
     private System.Func<int, int> rightDirection = (x) => ++x;
     private System.Func<int, int> leftDirection = (x) => --x;
 
-    private void Start()
+    protected override void Initialize()
     {
-        mover = new Mover(this, moveSpeed);
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
         transform.position = new Vector2(-moveRange, transform.position.y);
-        ChangeTargetPos(true);
-        mover.StartMove();
         StartCoroutine(ChangeSpritesContinuously());
     }
 

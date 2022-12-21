@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7355065713271074337}
   - component: {fileID: 7355065713271074367}
   - component: {fileID: 5967624275535353724}
+  - component: {fileID: 8027835365391223651}
   m_Layer: 0
   m_Name: RedMonster
   m_TagString: Monster
@@ -124,9 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d15fcac8feadd140b7bd3e98fff90ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
-  moveSpeed: 3
   spriteRenderer: {fileID: 0}
   sprites: []
   spriteChangeSpeed: 0.25
-  randomMoveRadius: 1
+  hitpoints: 1
+--- !u!114 &8027835365391223651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355065713271074364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7322937228cc6514e8f3080ebd435d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
