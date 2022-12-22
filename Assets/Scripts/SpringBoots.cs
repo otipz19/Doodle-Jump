@@ -20,6 +20,7 @@ public class SpringBoots : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private Sprite[] sprites;
+    public bool FlipX { set => spriteRenderer.flipX = value; }
 
     private void Update()
     {
@@ -46,6 +47,4 @@ public class SpringBoots : MonoBehaviour
         }
         yield break;
     }
-
-    public bool FlipX { set => spriteRenderer.flipX = value; }
 }

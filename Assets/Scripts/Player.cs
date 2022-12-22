@@ -66,6 +66,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private SpringBoots springBoots;
 
+    public bool IsFlying { get; set; }
+    [SerializeField]
+    private Propeller propeller;
+
     private void Awake()
     {
         if (s == null)
@@ -147,20 +151,34 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    public void ActivateShield()
+    public void ActivateBonus(BonusType bonusType)
     {
-        shield.Activate();
-    }
-
-    public void ActivateSpringBoots()
-    {
-        springBoots.Activate();
+        switch (bonusType)
+        {
+            case BonusType.shield:
+                shield.Activate();
+                break;
+            case BonusType.springBoots:
+                springBoots.Activate();
+                break;
+            case BonusType.propeller:
+                propeller.Activate();
+                break;
+            case BonusType.rocket:
+                break;
+        }
     }
 
     public void Jump(float platformSpeedModifier)
     {
-        Rigidbody.velocity = Vector2.up * verticalSpeed * platformSpeedModifier * (IsSpringBootsActive ? springBoots.JumpMod : 1);
-        StopCoroutine(springBoots.Animate());
-        StartCoroutine(springBoots.Animate());
+        if (!IsFlying)
+        {
+            Rigidbody.velocity = Vector2.up * verticalSpeed * platformSpeedModifier * (IsSpringBootsActive ? springBoots.JumpMod : 1);
+            if (IsSpringBootsActive)
+            {
+                StopCoroutine(springBoots.Animate());
+                StartCoroutine(springBoots.Animate());
+            }
+        }
     }
 }

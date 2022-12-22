@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7298228441920126602}
   - component: {fileID: 7298228441920126605}
-  - component: {fileID: 7298228441920126604}
+  - component: {fileID: 831224825128152960}
   - component: {fileID: 7298228441920126607}
   m_Layer: 0
   m_Name: ShieldBonus
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7298228441920126604
+--- !u!114 &831224825128152960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7298228441920126606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce141837dbfee8f4da0fc05271e04c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 23323fb744a9fd64eaedaf810353ee9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusType: 0
 --- !u!61 &7298228441920126607
 BoxCollider2D:
   m_ObjectHideFlags: 0
