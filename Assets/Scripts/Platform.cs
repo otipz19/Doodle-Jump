@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
     {
         if (transform.position.y < Camera.main.transform.position.y - Camera.main.orthographicSize - 0.25f)
         {
-            PlatformGenerator.S.PlatformDestroyed();
+            //PlatformGenerator.S.PlatformDestroyed();
             Destroy(this.gameObject);
         }
     }

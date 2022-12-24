@@ -7,7 +7,7 @@ public enum BonusType
     shield,
     springBoots,
     propeller,
-    rocket,
+    jetpack,
 }
 
 public class Bonus : MonoBehaviour

@@ -5,8 +5,6 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     [SerializeField]
-    private GameObject shieldGM;
-    [SerializeField]
     private float duration = 10f;
     private float startTime;
 
@@ -26,16 +24,13 @@ public class Shield : MonoBehaviour
     {
         if (Time.time - startTime >= duration)
         {
-            Player.S.IsShieldActive = false;
-            shieldGM.SetActive(false);
+            gameObject.SetActive(false);
             StopCoroutine(Blink());
         }
     }
 
-    public void Activate()
+    private void OnEnable()
     {
-        Player.S.IsShieldActive = true;
-        shieldGM.SetActive(true);
         startTime = Time.time;
         StartCoroutine(Blink());
     }

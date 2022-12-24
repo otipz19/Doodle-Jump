@@ -58,17 +58,17 @@ public class Player : MonoBehaviour
     private float bulletShotDelay = 0.5f;
     private float lastShot;
 
-    public bool IsShieldActive { get; set; }
     [SerializeField]
     private Shield shield;
-
-    public bool IsSpringBootsActive { get; set; }
     [SerializeField]
     private SpringBoots springBoots;
-
-    public bool IsFlying { get; set; }
     [SerializeField]
     private Propeller propeller;
+    [SerializeField]
+    private Jetpack jetpack;
+
+    public float MaxY => maxY;
+    private float maxY;
 
     private void Awake()
     {
@@ -96,6 +96,9 @@ public class Player : MonoBehaviour
         {
             Shoot();
         }
+        if (maxY - transform.position.y > 50)
+            ScoreManager.S.GameOver();
+        maxY = transform.position.y > maxY ? transform.position.y : maxY;
     }
 
     private void FixedUpdate()
@@ -121,7 +124,7 @@ public class Player : MonoBehaviour
     {
         Rigidbody.velocity = crossplatformController.HorizontalVelocity;
         spriteRenderer.flipX = Rigidbody.velocity.x < 0;
-        springBoots.FlipX = !spriteRenderer.flipX;
+        jetpack.FlipX = springBoots.FlipX = !spriteRenderer.flipX;
     }
 
     private void CameraFollow()
@@ -147,8 +150,10 @@ public class Player : MonoBehaviour
 
     public void GetDamage()
     {
-        if (!IsShieldActive)
-            Destroy(this.gameObject);
+        if (!shield.gameObject.activeSelf)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
 
     public void ActivateBonus(BonusType bonusType)
@@ -156,28 +161,28 @@ public class Player : MonoBehaviour
         switch (bonusType)
         {
             case BonusType.shield:
-                shield.Activate();
+                shield.gameObject.SetActive(true);
                 break;
             case BonusType.springBoots:
-                springBoots.Activate();
+                springBoots.gameObject.SetActive(true);
                 break;
             case BonusType.propeller:
-                propeller.Activate();
+                propeller.gameObject.SetActive(true);
                 break;
-            case BonusType.rocket:
+            case BonusType.jetpack:
+                jetpack.gameObject.SetActive(true);
                 break;
         }
     }
 
     public void Jump(float platformSpeedModifier)
     {
-        if (!IsFlying)
+        if (!propeller.gameObject.activeSelf && !jetpack.gameObject.activeSelf)
         {
-            Rigidbody.velocity = Vector2.up * verticalSpeed * platformSpeedModifier * (IsSpringBootsActive ? springBoots.JumpMod : 1);
-            if (IsSpringBootsActive)
+            Rigidbody.velocity = Vector2.up * verticalSpeed * platformSpeedModifier * (springBoots.gameObject.activeSelf ? springBoots.JumpMod : 1);
+            if (springBoots.gameObject.activeSelf)
             {
-                StopCoroutine(springBoots.Animate());
-                StartCoroutine(springBoots.Animate());
+                springBoots.Animate();
             }
         }
     }

@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152f6cd7ba2205b4485258f3cfc88f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDistance: 5
-  changeSpriteAcceleration: 1.25
+  activationDistance: 1.5
+  changeSpriteAcceleration: 1.05
 --- !u!114 &-5079137557493885238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,4 +214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e683b94d8d587428fb645f413870ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeedModifier: 1
+  speedModifier: 1

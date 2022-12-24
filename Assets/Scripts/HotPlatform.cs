@@ -8,7 +8,7 @@ public class HotPlatform : Platform
     [SerializeField]
     private float activationDistance = 5f;
     [SerializeField]
-    private float changeSpriteAcceleration = 1.25f;
+    private float changeSpriteAcceleration = 1.05f;
 
     private void Start()
     {

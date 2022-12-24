@@ -7,7 +7,7 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField]
     private float speed = 15f;
     [SerializeField]
-    private float maxLifeTimeInSeconds = 10f;
+    private float maxLifeTimeInSeconds = 5f;
     private float lifeStarted;
 
     private void Awake()
