@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5400461443211761306}
   - component: {fileID: 3732652623949078819}
   - component: {fileID: 7062150696917069904}
+  - component: {fileID: -1311525725196008807}
   m_Layer: 0
   m_Name: SinFlyingMonster
   m_TagString: Monster
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -514306949
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ce838a85d02d40b428292b50852fbe74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,3 +162,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bc0c232bf71c0f46adc83e56bc8f1ab, type: 3}
   - {fileID: 21300000, guid: fddd3973f88c81e43ae0c2e14a5bb3ae, type: 3}
   spriteChangeSpeed: 0.25
+--- !u!114 &-1311525725196008807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355065713271074364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91845e6757328d148a118809bc032f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7298228441920126605}
   - component: {fileID: 7298228441920126607}
   - component: {fileID: 2190617217505865170}
+  - component: {fileID: 4928726966659122076}
   m_Layer: 0
   m_Name: SpringBootsBonus
   m_TagString: Untagged
@@ -125,3 +126,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusType: 1
+--- !u!114 &4928726966659122076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298228441920126606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91845e6757328d148a118809bc032f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

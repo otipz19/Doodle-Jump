@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4049333526423856995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4686734919123356806}
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: -895123226387615048}
   - component: {fileID: 5975658831309506246}
   - component: {fileID: -5079137557493885238}
+  - component: {fileID: 7049446261257076365}
   m_Layer: 0
   m_Name: HotPlatform
   m_TagString: Platform
@@ -164,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 0.3}
+  m_Size: {x: 1, y: 0.3}
   m_EdgeRadius: 0
 --- !u!114 &-895123226387615048
 MonoBehaviour:
@@ -200,6 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152f6cd7ba2205b4485258f3cfc88f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusSpawnPos: {fileID: 0}
+  bonusSpawnChance: 0
+  spriteChanger: {fileID: -895123226387615048}
   activationDistance: 1.5
   changeSpriteAcceleration: 1.05
 --- !u!114 &-5079137557493885238
@@ -215,3 +219,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedModifier: 1
+--- !u!114 &7049446261257076365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686734919123356800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91845e6757328d148a118809bc032f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

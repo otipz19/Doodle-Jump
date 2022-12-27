@@ -35,6 +35,8 @@ public class ScoreManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("HighScore"))
             PlayerPrefs.SetInt("HighScore", curScore);
         highScore = PlayerPrefs.GetInt("HighScore");
+        if (curScore > highScore)
+            PlayerPrefs.SetInt("HighScore", highScore = curScore);
         scorePanel.SetActive(true);
         scoreText.text = curScore.ToString();
         highScoreText.text = highScore.ToString();

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BlueTwinMonster : Monster, IMoveable
 {
-    [SerializeField]
-    private GameObject twinPrefab;
+    [SerializeField] private GameObject twinPrefab;
     private BlueTwinMonster twin;
 
     private float edgeX;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7979658238401243030}
   - component: {fileID: 7979658238401243031}
   - component: {fileID: 7979658238401243115}
+  - component: {fileID: 1665340934341029157}
   m_Layer: 10
   m_Name: Trampoline
   m_TagString: Bonus
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e683b94d8d587428fb645f413870ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeedModifier: 1
+  speedModifier: 1
 --- !u!61 &7979658238401243030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,6 +114,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e37ed29e4e720684fa599d71d4897ee9, type: 3}
   - {fileID: 21300000, guid: 04803643d942be7449cdf590f71d5d17, type: 3}
   changeSpriteDuration: 0.15
+--- !u!114 &1665340934341029157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979658238401243029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91845e6757328d148a118809bc032f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7979658238527007358
 GameObject:
   m_ObjectHideFlags: 0

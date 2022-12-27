@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4049333526423856995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4686734919123356806}
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4686734919123356805}
   - component: {fileID: -895123226387615048}
   - component: {fileID: 2670869879401332932}
+  - component: {fileID: 1861222048729712668}
   m_Layer: 0
   m_Name: VolatilePlatform
   m_TagString: Platform
@@ -163,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 0.3}
+  m_Size: {x: 1, y: 0.3}
   m_EdgeRadius: 0
 --- !u!114 &-895123226387615048
 MonoBehaviour:
@@ -193,5 +194,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24eab6c562fd21e4391422b10a6ef951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusSpawnPos: {fileID: 0}
+  bonusSpawnChance: 0
+  spriteChanger: {fileID: -895123226387615048}
+  collider: {fileID: 4686734919123356805}
+--- !u!114 &1861222048729712668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686734919123356800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91845e6757328d148a118809bc032f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

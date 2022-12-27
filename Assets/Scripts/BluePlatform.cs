@@ -5,12 +5,12 @@ using UnityEngine;
 public class BluePlatform : Platform, IMoveable
 {
     private float moveRange;
-    private Mover mover;
+    [SerializeField] private Mover mover;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         moveRange = Camera.main.orthographicSize * Camera.main.aspect - transform.localScale.x / 2;
-        mover = GetComponent<Mover>();
     }
 
     public void ChangeTargetPos(bool firstCall = false)

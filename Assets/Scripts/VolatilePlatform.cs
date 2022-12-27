@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class VolatilePlatform : Platform
 {
-    private SpriteChanger spriteChanger;
-    private new Collider2D collider;
-
-    private void Start()
-    {
-        spriteChanger = GetComponent<SpriteChanger>();
-        collider = GetComponent<Collider2D>();
-    }
+    [SerializeField] private SpriteChanger spriteChanger;
+    [SerializeField] private new Collider2D collider;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

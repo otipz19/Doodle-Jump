@@ -101,7 +101,10 @@ MonoBehaviour:
   blinkingIntensityMax: 1
   blinkingIntensityMin: 0.1
   spriteRenderer: {fileID: 331533402}
-  sprites: []
+  sprites:
+  - {fileID: -2108537686, guid: a32c4de2d7023d24cbddd829dd3b7ab9, type: 3}
+  - {fileID: 751325872, guid: a32c4de2d7023d24cbddd829dd3b7ab9, type: 3}
+  - {fileID: -337940568, guid: a32c4de2d7023d24cbddd829dd3b7ab9, type: 3}
 --- !u!1 &919021421624579774
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +575,7 @@ GameObject:
   - component: {fileID: 6043343995477807515}
   - component: {fileID: 6043343995477807512}
   - component: {fileID: 6043343995477807513}
+  - component: {fileID: 4868749008846557777}
   - component: {fileID: 6043343995477807517}
   - component: {fileID: 6043343995477807516}
   m_Layer: 0
@@ -665,19 +669,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851f75099bf239f4fa62b64e694e7ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightDirectionSprite: {fileID: 21300000, guid: dfe7d04946d6f124ca5ec8c5a506997c, type: 3}
-  forwardDirectionSprite: {fileID: 21300000, guid: 4dccac9f3892a7442a52e352396d3ab8, type: 3}
-  nose: {fileID: 3753594423123712817}
-  bulletSpawnPoint: {fileID: 6646239946150838267}
   horizontalSpeed: 8
   verticalSpeed: 9
-  bulletPrefab: {fileID: 2908452937009718711, guid: 9b744da0b2bf138498476fac78ef60cb, type: 3}
-  spriteChangeDelay: 0.25
-  bulletShotDelay: 0.5
   shield: {fileID: 1560817401655887251}
   springBoots: {fileID: 4020235135613317402}
   propeller: {fileID: 6301361767241561063}
   jetpack: {fileID: 4445377588328435163}
+--- !u!114 &4868749008846557777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043343995477807510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d959beb2b0f29744bd1aa1bef45a72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightDirectionSprite: {fileID: 21300000, guid: dfe7d04946d6f124ca5ec8c5a506997c, type: 3}
+  forwardDirectionSprite: {fileID: 21300000, guid: 4dccac9f3892a7442a52e352396d3ab8, type: 3}
+  bulletShotDelay: 0.5
+  bulletPrefab: {fileID: 2908452937009718711, guid: 9b744da0b2bf138498476fac78ef60cb, type: 3}
+  spriteChangeDelay: 0.25
+  nose: {fileID: 3753594423123712817}
+  bulletSpawnPoint: {fileID: 6646239946150838267}
 --- !u!50 &6043343995477807517
 Rigidbody2D:
   serializedVersion: 4
